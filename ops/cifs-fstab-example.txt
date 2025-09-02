@@ -1,0 +1,8 @@
+# Create credentials file on Ubuntu host:
+# sudo sh -c 'echo "username=DOMAIN\\svc_smb" > /etc/smb-cred'
+# sudo sh -c 'echo "password=StrongPassword!" >> /etc/smb-cred'
+# sudo chmod 600 /etc/smb-cred
+
+
+# /etc/fstab entry (adjust host/share and uid/gid)
+//WIN-SERVER/Interventions$ /mnt/interventions cifs credentials=/etc/smb-cred,iocharset=utf8,vers=3.0,file_mode=0640,dir_mode=0750,uid=1000,gid=1000 0 0
